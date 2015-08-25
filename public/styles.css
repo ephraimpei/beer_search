@@ -63,6 +63,10 @@ footer {
   margin-bottom: 1em;
 }
 
+.beer {
+  overflow: hidden;
+}
+
 #results ul {
   margin: 20px;
   list-style-type: none;

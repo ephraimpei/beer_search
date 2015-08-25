@@ -13,22 +13,24 @@
     </header>
   <div id="content">
     <form id="beer-search" method="get" accept-charset="utf-8">
-      <input type="text" autocomplete = "off" class="search" name="q" placeholder="Search for beer here." value=<%= @query %>>
+      <input type="text" autocomplete = "off" class="search" name="q" placeholder="Search for beer here." value="<%= @query %>">
     </form>
     <div id="results">
       <% if @query && @beers.empty? %>
         Your search returned no results. :(
       <% end %>
       <% @beers.each do |beer| %>
-        <% if beer.image_url %>
-          <img src=<%= beer.image_url %>>
-        <% end %>
-        <span class="name"><%= beer.name %></span>
-        <% if beer.description %>
-          <span class="description"><%= beer.description %></span>
-        <% else %>
-          <span class="nodesc"></span>
-        <% end %>
+        <div class="beer">
+          <% if beer.image_url %>
+            <img src="<%= beer.image_url %>">
+          <% end %>
+          <span class="name"><%= beer.name %></span>
+          <% if beer.description %>
+            <span class="description"><%= beer.description %></span>
+          <% else %>
+            <span class="nodesc"></span>
+          <% end %>
+        </div>
       <% end if @beers %>
       <% if @error %>
         <%= @error %>

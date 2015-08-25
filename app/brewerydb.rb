@@ -16,6 +16,5 @@ class Brewerydb
   	search_query = @@base_uri + endpoint + URI.encode_www_form(options).to_s
   	
   	return Net::HTTP.get_response(URI(search_query))
-  	#self.class.get("http://api.brewerydb.com/v2", {:type=>"beer", :q=>query, :key=>@key, :format=>"json"})
   end
 end
